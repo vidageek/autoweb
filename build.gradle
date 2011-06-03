@@ -20,6 +20,7 @@ configurations {
 
 sourceSets {
 	main { compileClasspath += configurations.provided }
+	test { runtimeClasspath += configurations.provided }
 }
 
 dependencies {
