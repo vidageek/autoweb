@@ -18,6 +18,7 @@ final public class CssTag extends AutowebSimpleTagSupport {
 	@Override
 	public void doTag() throws JspException, IOException {
 		new CssTagCore(url).applyTo(new TagEnvironment(this));
+		url = "";
 	}
 
 	public void setUrl(final String url) {
