@@ -18,7 +18,7 @@ final public class CssTagCore implements AutowebSimpleTag {
 	public void applyTo(final TagEnvironment env) {
 
 		env.write("<link href=\"" + (env.contextPath() == "/" ? "" : env.contextPath()) + path
-				+ "\" rel=\"stylesheet\" type=\"text/css\" />");
+				+ "\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\" />");
 	}
 
 	private String addResourceParameter(String path) {

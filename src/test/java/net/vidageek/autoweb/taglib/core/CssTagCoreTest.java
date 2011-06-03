@@ -49,7 +49,7 @@ final public class CssTagCoreTest {
 		new CssTagCore("/css/test.css").applyTo(env);
 
 		verify(env).write(	"<link href=\"/css/test.css?autowebResourceVersion=" + ResourceVersionIdHandler.getId()
-									+ "\" rel=\"stylesheet\" type=\"text/css\" />");
+									+ "\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\" />");
 	}
 
 	@Test
@@ -59,6 +59,6 @@ final public class CssTagCoreTest {
 		new CssTagCore("/css/test.css?a=b").applyTo(env);
 
 		verify(env).write(	"<link href=\"/css/test.css?a=b&autowebResourceVersion=" + ResourceVersionIdHandler.getId()
-									+ "\" rel=\"stylesheet\" type=\"text/css\" />");
+									+ "\" rel=\"stylesheet\" type=\"text/css\" media=\"screen\" />");
 	}
 }
