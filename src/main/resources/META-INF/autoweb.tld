@@ -5,11 +5,11 @@
 <taglib>
 	<tlibversion>1.0</tlibversion>
 	<jspversion>1.1</jspversion>
-	<shortname>autoweb</shortname>
+	<shortname>http://vidageek.net/autoweb</shortname>
 	<uri>http://vidageek.net/autoweb</uri>
 	<info>Autoweb tags</info>
 	<tag>
-		<name>resource</name>
+		<name>css</name>
 		<tagclass>net.vidageek.autoweb.taglib.CssTag</tagclass>
 		<info>Generates css tag with cache invalidation parameter</info>
 		<bodycontent>empty</bodycontent>
