@@ -15,12 +15,14 @@ final public class ImgTag extends AutowebSimpleTagSupport {
 
 	private String url = "";
 	private String altText = "";
+	private String title;
 
 	@Override
 	public void doTag() throws JspException, IOException {
-		new ImgTagCore(url, altText).applyTo(new TagEnvironment(this));
+		new ImgTagCore(url, altText, title).applyTo(new TagEnvironment(this));
 		url = "";
 		altText = "";
+		title = "";
 	}
 
 	public void setUrl(final String url) {
@@ -31,4 +33,7 @@ final public class ImgTag extends AutowebSimpleTagSupport {
 		this.altText = altText;
 	}
 
+	public void setTitle(final String title) {
+		this.title = title;
+	}
 }

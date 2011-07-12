@@ -29,7 +29,7 @@ final public class ImgTagCoreTest {
 	public void testThatAddsContextPath() {
 		when(env.contextPath()).thenReturn("/context");
 
-		new ImgTagCore("", "").applyTo(env);
+		new ImgTagCore("", "", "").applyTo(env);
 
 		verify(env).write(contains("/context"));
 	}
@@ -37,7 +37,7 @@ final public class ImgTagCoreTest {
 	@Test
 	public void testThatAddsResourceVersionToInvalidateCache() {
 
-		new ImgTagCore("", "").applyTo(env);
+		new ImgTagCore("", "", "").applyTo(env);
 
 		verify(env).write(contains("autowebResourceVersion=" + ResourceVersionIdHandler.getId()));
 	}
@@ -46,30 +46,40 @@ final public class ImgTagCoreTest {
 	public void testThatCreatesCompleteCssTagWithSimpleUrl() {
 		when(env.contextPath()).thenReturn("/");
 
-		new ImgTagCore("/img/test.png", "").applyTo(env);
+		new ImgTagCore("/img/test.png", "", "").applyTo(env);
 
 		verify(env).write(	"<img src=\"/img/test.png?autowebResourceVersion=" + ResourceVersionIdHandler.getId()
-									+ "\" alt=\"\" />");
+									+ "\" alt=\"\" title=\"\" />");
 	}
 
 	@Test
 	public void testThatCreatesCompleteCssTagWithComplexUrl() {
 		when(env.contextPath()).thenReturn("/");
 
-		new ImgTagCore("/img/test.png?a=b", "").applyTo(env);
+		new ImgTagCore("/img/test.png?a=b", "", "").applyTo(env);
 
 		verify(env).write(	"<img src=\"/img/test.png?a=b&autowebResourceVersion=" + ResourceVersionIdHandler.getId()
-									+ "\" alt=\"\" />");
+									+ "\" alt=\"\" title=\"\" />");
 	}
 
 	@Test
 	public void testThatCreatesCompleteCssTagWithComplexUrlAndAlternativeText() {
 		when(env.contextPath()).thenReturn("/");
 
-		new ImgTagCore("/img/test.png?a=b", "alt text").applyTo(env);
+		new ImgTagCore("/img/test.png?a=b", "alt text", "").applyTo(env);
 
 		verify(env).write(	"<img src=\"/img/test.png?a=b&autowebResourceVersion=" + ResourceVersionIdHandler.getId()
-									+ "\" alt=\"alt text\" />");
+									+ "\" alt=\"alt text\" title=\"\" />");
+	}
+
+	@Test
+	public void testThatCreatesCompleteCssTagWithComplexUrlAlternativeTextAndTitle() {
+		when(env.contextPath()).thenReturn("/");
+
+		new ImgTagCore("/img/test.png?a=b", "alt text", "Title").applyTo(env);
+
+		verify(env).write(	"<img src=\"/img/test.png?a=b&autowebResourceVersion=" + ResourceVersionIdHandler.getId()
+									+ "\" alt=\"alt text\" title=\"Title\" />");
 	}
 
 }
