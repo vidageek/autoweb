@@ -19,4 +19,20 @@
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
+	<tag>
+		<name>img</name>
+		<tagclass>net.vidageek.autoweb.taglib.ImgTag</tagclass>
+		<info>Generates img tag with cache invalidation parameter</info>
+		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>url</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>alt</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
 </taglib>

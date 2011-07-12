@@ -1,4 +1,4 @@
-package net.vidageek.autoweb.taglib.core;
+package net.vidageek.autoweb.taglib.support;
 
 import net.vidageek.autoweb.taglib.support.ResourceVersionIdHandler;
 
