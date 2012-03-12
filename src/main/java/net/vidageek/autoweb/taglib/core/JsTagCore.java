@@ -14,7 +14,7 @@ final public class JsTagCore implements AutowebSimpleTag {
 
 	public void applyTo(final TagEnvironment env) {
 		env.write("<script type=\"text/javascript\" src=\""
-				+ new ContextDependentPath(path.toString(), env.contextPath()).toString() + " ></script>");
+				+ new ContextDependentPath(path.toString(), env.contextPath()).toString() + "\" ></script>");
 	}
 
 }

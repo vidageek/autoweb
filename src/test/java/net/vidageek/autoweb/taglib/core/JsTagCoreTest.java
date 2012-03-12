@@ -45,7 +45,7 @@ final public class JsTagCoreTest {
 		new JsTagCore("/js/test.js").applyTo(env);
 
 		verify(env).write(	"<script type=\"text/javascript\" src=\"/js/test.js?autowebResourceVersion="
-									+ ResourceVersionIdHandler.getId() + " ></script>");
+									+ ResourceVersionIdHandler.getId() + "\" ></script>");
 	}
 
 	@Test
@@ -55,6 +55,6 @@ final public class JsTagCoreTest {
 		new JsTagCore("/js/test.js?a=b").applyTo(env);
 
 		verify(env).write(	"<script type=\"text/javascript\" src=\"/js/test.js?a=b&autowebResourceVersion="
-									+ ResourceVersionIdHandler.getId() + " ></script>");
+									+ ResourceVersionIdHandler.getId() + "\" ></script>");
 	}
 }
