@@ -20,6 +20,17 @@
 		</attribute>
 	</tag>
 	<tag>
+		<name>js</name>
+		<tagclass>net.vidageek.autoweb.taglib.JsTag</tagclass>
+		<info>Generates js tag with cache invalidation parameter</info>
+		<bodycontent>empty</bodycontent>
+		<attribute>
+			<name>url</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
 		<name>img</name>
 		<tagclass>net.vidageek.autoweb.taglib.ImgTag</tagclass>
 		<info>Generates img tag with cache invalidation parameter</info>
